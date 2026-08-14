@@ -4,7 +4,7 @@ const papers = [
     category: "working",
     status: "Working paper",
     year: "In revision",
-    thumbnail: "assets/papers/robot-multi-party-awareness-abstract.png",
+    thumbnail: "assets/papers/robot-multi-party-awareness-ai.jpg?v=ai2",
     keywords: ["Multi-party HRI", "Service adaptability", "Revisit intention"],
     title: "Robot Multi-Party Awareness in Complex Frontline Service Environments: Effects on Service Adaptability and Customer Revisit Intentions",
     authors: "Yanting Wang, Sangseok You, and Soowon Kim",
@@ -20,7 +20,7 @@ const papers = [
     category: "published",
     status: "Published",
     year: "2023",
-    thumbnail: "assets/papers/enhancing-robot-explainability-abstract.png",
+    thumbnail: "assets/papers/enhancing-robot-explainability-ai.jpg?v=ai2",
     keywords: ["Robot explainability", "Social cues", "Collaboration"],
     title: "Enhancing Robot Explainability in Human–Robot Collaboration",
     authors: "Yanting Wang and Sangseok You",
@@ -36,7 +36,7 @@ const papers = [
     category: "published",
     status: "Published",
     year: "2025",
-    thumbnail: "assets/papers/embodied-robots-framework-abstract.png",
+    thumbnail: "assets/papers/embodied-robots-framework-ai.jpg?v=ai2",
     keywords: ["Embodied robots", "Design science", "Real-world deployment"],
     title: "Designing Embodied Robots for Real-World Applications: A Contextual and Goal-Driven Framework Grounded in IS Design Science",
     authors: "Yanting Wang and Sangseok You",
@@ -52,7 +52,7 @@ const papers = [
     category: "under-review",
     status: "Under review",
     year: "Manuscript",
-    thumbnail: "assets/papers/trust-pathways-hybrid-teams-abstract.png",
+    thumbnail: "assets/papers/trust-pathways-hybrid-teams-ai.jpg?v=ai2",
     keywords: ["Robot trust", "Human identification", "Hybrid teams"],
     title: "Building Trust in Robots, Identifying with Humans: Distinct Trust Pathways in Hybrid",
     authors: "",
@@ -68,7 +68,7 @@ const papers = [
     category: "under-review",
     status: "Under review",
     year: "Manuscript",
-    thumbnail: "assets/papers/online-news-under-stress-abstract.png",
+    thumbnail: "assets/papers/online-news-under-stress-ai.jpg?v=ai2",
     keywords: ["News believability", "Stress", "Digital behavior"],
     title: "Online News Appraisal Under Stress: How Internal and External Resources Shape News Believability and Behavior",
     authors: "",
@@ -84,7 +84,7 @@ const papers = [
     category: "working",
     status: "Working paper",
     year: "In development",
-    thumbnail: "assets/papers/perceived-robot-explainability-abstract.png",
+    thumbnail: "assets/papers/perceived-robot-explainability-ai.jpg?v=ai2",
     keywords: ["Perceived robot explainability", "Human–robot teams", "Social cues"],
     title: "Perceived robot explainability in human-robot team",
     authors: "Yanting Wang and Sangseok You",
@@ -101,7 +101,7 @@ const papers = [
     status: "Job Market Paper",
     year: "In development",
     featured: true,
-    thumbnail: "assets/papers/trust-repair-service-failure-abstract.png",
+    thumbnail: "assets/papers/trust-repair-service-failure-ai.jpg?v=ai2",
     keywords: ["Trust repair", "Service failure", "Behavioral intention"],
     title: "Trust Repair in Human–Robot Interaction After Service Failure",
     authors: "Yanting Wang, Sangseok You, Younghoon Chang, Jaehyun Park, Sunghan Ryu, and Seoyoun Lee",
@@ -117,7 +117,7 @@ const papers = [
     category: "working",
     status: "Working paper",
     year: "In development",
-    thumbnail: "assets/papers/vr-mr-spatial-learning-abstract.png",
+    thumbnail: "assets/papers/vr-mr-spatial-learning-ai.jpg?v=ai2",
     keywords: ["VR / MR", "Spatial learning", "Affordances"],
     title: "Comparing VR and MR for Spatial Learning",
     authors: "Mincheol Shin, Yanting Wang, Jaeeun Lim, and Sangseok You",
@@ -145,7 +145,7 @@ function paperCard(paper) {
     <div class="paper-card-top"><span class="paper-status">${paper.status}</span><span class="paper-year">${paper.year}</span></div>
     <div class="paper-card-content">
       <div class="paper-thumbnail" data-thumbnail-for="${paper.id}">
-        ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}">` : `<div class="paper-thumbnail-placeholder"><span aria-hidden="true">+</span><small>Thumbnail reserved</small></div>`}
+        ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}" loading="${paper.featured ? "eager" : "lazy"}">` : `<div class="paper-thumbnail-placeholder"><span aria-hidden="true">+</span><small>Thumbnail reserved</small></div>`}
       </div>
       <div class="paper-card-copy">
         <h3>${paper.title}</h3><p class="paper-summary">${paper.summary}</p>
@@ -173,7 +173,7 @@ function renderPublicationLists() {
         return `<button class="publication-row" type="button" data-paper="${paper.id}" data-paper-source="publication">
         <span class="publication-row-index">${String(index + 1).padStart(2, "0")}</span>
         <span class="publication-row-thumbnail" data-thumbnail-for="${paper.id}">
-          ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}">` : `<span class="publication-row-placeholder">Thumbnail reserved</span>`}
+          ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}" loading="lazy">` : `<span class="publication-row-placeholder">Thumbnail reserved</span>`}
         </span>
         <span><span class="publication-row-title">${paper.title}</span>${metadata ? `<span class="publication-row-meta">${metadata}</span>` : ""}</span>
         <span class="publication-row-arrow" aria-hidden="true">→</span></button>`;
