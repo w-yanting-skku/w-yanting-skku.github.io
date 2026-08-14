@@ -51,7 +51,7 @@ const papers = [
     id: "trust-pathways-hybrid-teams",
     category: "under-review",
     status: "Under review",
-    year: "Manuscript",
+    year: "",
     thumbnail: "assets/papers/trust-pathways-hybrid-teams-ai.jpg?v=ai2",
     keywords: ["Robot trust", "Human identification", "Hybrid teams"],
     title: "Building Trust in Robots, Identifying with Humans: Distinct Trust Pathways in Hybrid",
@@ -67,7 +67,7 @@ const papers = [
     id: "online-news-under-stress",
     category: "under-review",
     status: "Under review",
-    year: "Manuscript",
+    year: "",
     thumbnail: "assets/papers/online-news-under-stress-ai.jpg?v=ai2",
     keywords: ["News believability", "Stress", "Digital behavior"],
     title: "Online News Appraisal Under Stress: How Internal and External Resources Shape News Believability and Behavior",
@@ -140,7 +140,7 @@ let syncingDialog = false;
 
 function paperCard(paper) {
   return `<article class="paper-card${paper.featured ? " is-featured" : ""}" data-category="${paper.category}">
-    <div class="paper-card-top"><span class="paper-status">${paper.status}</span><span class="paper-year">${paper.year}</span></div>
+    <div class="paper-card-top"><span class="paper-status">${paper.status}</span>${paper.year ? `<span class="paper-year">${paper.year}</span>` : ""}</div>
     <div class="paper-card-content">
       <div class="paper-thumbnail" data-thumbnail-for="${paper.id}">
         ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}" loading="${paper.featured ? "eager" : "lazy"}">` : `<div class="paper-thumbnail-placeholder"><span aria-hidden="true">+</span><small>Thumbnail reserved</small></div>`}
@@ -189,7 +189,7 @@ function fillDialog(paper) {
   document.getElementById("dialog-focus").textContent = paper.focus;
   document.getElementById("dialog-method").textContent = paper.method;
   document.getElementById("dialog-contribution").textContent = paper.contribution;
-  document.getElementById("dialog-badges").innerHTML = `<span>${paper.status}</span><span>${paper.year}</span>`;
+  document.getElementById("dialog-badges").innerHTML = `<span>${paper.status}</span>${paper.year ? `<span>${paper.year}</span>` : ""}`;
 }
 
 function openPaper(paperId, updateHash = true) {
