@@ -97,7 +97,7 @@ const papers = [
   },
   {
     id: "trust-repair-service-failure",
-    category: "working",
+    category: "job-market",
     status: "Job Market Paper",
     year: "In development",
     featured: true,
