@@ -130,13 +130,11 @@ const papers = [
   }
 ];
 
-const categoryLabels = { published: "Published", "under-review": "Under review", working: "Working paper" };
 const sections = [...document.querySelectorAll("[data-section]")];
 const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
 const navLinks = [...document.querySelectorAll(".nav-tab[data-section-link]")];
 const paperDialog = document.getElementById("paper-dialog");
 const homePaperGrid = document.getElementById("home-paper-grid");
-const publicationLists = document.getElementById("publication-lists");
 let currentFilter = "all";
 let syncingDialog = false;
 
@@ -162,26 +160,6 @@ function renderHomePapers() {
   homePaperGrid.innerHTML = visiblePapers.map(paperCard).join("");
 }
 
-function renderPublicationLists() {
-  const groups = [["Peer-reviewed publications", "published"], ["Papers under review", "under-review"], ["Working papers", "working"]];
-  publicationLists.innerHTML = groups.map(([label, category]) => {
-    const groupPapers = papers.filter((paper) => paper.category === category);
-    return `<section class="publication-group" aria-labelledby="group-${category}">
-      <h3 id="group-${category}">${label}</h3><div class="publication-group-list">
-      ${groupPapers.map((paper, index) => {
-        const metadata = [paper.authors, paper.venue].filter(Boolean).join(" · ");
-        return `<button class="publication-row" type="button" data-paper="${paper.id}" data-paper-source="publication">
-        <span class="publication-row-index">${String(index + 1).padStart(2, "0")}</span>
-        <span class="publication-row-thumbnail" data-thumbnail-for="${paper.id}">
-          ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}" loading="lazy">` : `<span class="publication-row-placeholder">Thumbnail reserved</span>`}
-        </span>
-        <span><span class="publication-row-title">${paper.title}</span>${metadata ? `<span class="publication-row-meta">${metadata}</span>` : ""}</span>
-        <span class="publication-row-arrow" aria-hidden="true">→</span></button>`;
-      }).join("")}
-      </div></section>`;
-  }).join("");
-}
-
 function setActiveSection(sectionName) {
   navLinks.forEach((link) => {
     const active = link.dataset.sectionLink === sectionName;
@@ -199,14 +177,14 @@ function scrollToSection(sectionName, updateHash = true) {
   if (updateHash) history.pushState(null, "", `#${target.id}`);
 }
 
-function fillDialog(paper, showPublicationMeta = false) {
+function fillDialog(paper) {
   const authors = document.getElementById("dialog-authors");
   const venue = document.getElementById("dialog-venue");
   document.getElementById("dialog-title").textContent = paper.title;
-  authors.textContent = paper.authors;
-  authors.hidden = !showPublicationMeta || !paper.authors;
-  venue.textContent = paper.venue;
-  venue.hidden = !showPublicationMeta || !paper.venue;
+  authors.textContent = "";
+  authors.hidden = true;
+  venue.textContent = "";
+  venue.hidden = true;
   document.getElementById("dialog-overview").textContent = paper.overview;
   document.getElementById("dialog-focus").textContent = paper.focus;
   document.getElementById("dialog-method").textContent = paper.method;
@@ -214,10 +192,10 @@ function fillDialog(paper, showPublicationMeta = false) {
   document.getElementById("dialog-badges").innerHTML = `<span>${paper.status}</span><span>${paper.year}</span>`;
 }
 
-function openPaper(paperId, updateHash = true, showPublicationMeta = false) {
+function openPaper(paperId, updateHash = true) {
   const paper = papers.find((item) => item.id === paperId);
   if (!paper) return;
-  fillDialog(paper, showPublicationMeta);
+  fillDialog(paper);
   syncingDialog = true;
   if (!paperDialog.open) paperDialog.showModal();
   syncingDialog = false;
@@ -249,7 +227,7 @@ sectionLinks.forEach((link) => link.addEventListener("click", (event) => {
 }));
 document.addEventListener("click", (event) => {
   const paperButton = event.target.closest("[data-paper]");
-  if (paperButton) openPaper(paperButton.dataset.paper, true, paperButton.dataset.paperSource === "publication");
+  if (paperButton) openPaper(paperButton.dataset.paper);
 });
 document.querySelectorAll("[data-filter]").forEach((button) => {
   button.addEventListener("click", () => {
@@ -270,6 +248,5 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sections.forEach((section) => sectionObserver.observe(section));
 
 renderHomePapers();
-renderPublicationLists();
 document.getElementById("current-year").textContent = new Date().getFullYear();
 syncFromHash();
