@@ -2,7 +2,7 @@ const papers = [
   {
     id: "robot-multi-party-awareness",
     category: "working",
-    status: "Working paper",
+    status: "Manuscript in Development",
     year: "In revision",
     thumbnail: "assets/papers/robot-multi-party-awareness-ai.jpg?v=ai2",
     keywords: ["Multi-party HRI", "Service adaptability", "Revisit intention"],
