@@ -78,15 +78,17 @@ main { display: flex; flex-direction: column; }
 .hero-education-list p { margin: 4px 0 0; color: var(--ink-soft); font-size: 10.5px; }
 
 .focus-strip { border-block: 1px solid var(--line); background: #f8f9f9; }
-.focus-strip-inner { display: flex; align-items: center; justify-content: center; gap: 18px; min-height: 64px; color: var(--ink-soft); font-family: var(--serif); font-size: 14px; white-space: nowrap; overflow-x: auto; scrollbar-width: none; }
-.focus-strip-inner::-webkit-scrollbar { display: none; }
-.focus-strip-inner i { flex: 0 0 auto; width: 5px; height: 5px; border-radius: 50%; background: var(--rose); }
-.focus-strip-inner .focus-label { color: var(--sage-deep); font-family: var(--sans); font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.focus-strip-inner { display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 12px 34px; min-height: 0; padding-block: 22px 24px; color: var(--ink-soft); white-space: normal; overflow: visible; }
+.focus-strip-inner .focus-label { flex: 0 0 100%; margin-bottom: 2px; color: var(--sage-deep); font-family: var(--sans); font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.focus-interest { position: relative; flex: 1 1 calc(50% - 34px); padding-left: 15px; color: var(--ink); font-family: var(--serif); font-size: 15px; line-height: 1.45; }
+.focus-interest::before { content: ""; position: absolute; top: 0.66em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--rose); }
 
 .papers-section { padding-block: 112px 128px; }
-.section-heading h2, .page-intro h2 { margin: 0; font-family: var(--serif); font-size: clamp(43px, 5vw, 70px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.05; }
-.section-title { position: relative; }
-.section-title .section-kicker { color: var(--rose); }
+.section-heading h2, .page-intro:not(.section-title) h2 { margin: 0; font-family: var(--serif); font-size: clamp(38px, 4.4vw, 58px); font-weight: 500; letter-spacing: -0.04em; line-height: 1.08; }
+.section-title { position: relative; max-width: none; padding-bottom: 36px; border-bottom: 1px solid var(--ink); }
+.section-title .section-kicker { margin-bottom: 12px; color: var(--rose); }
+.page-intro.section-title h2 { margin: 0; font-family: var(--serif); font-size: clamp(54px, 6.4vw, 84px); font-weight: 500; letter-spacing: -0.055em; line-height: 0.98; }
+.page-intro.section-title > p:last-child { max-width: 620px; margin-top: 22px; color: var(--ink-soft); font-family: var(--sans); font-size: 14px; line-height: 1.7; }
 .research-section-title { margin-bottom: 0; padding-top: 92px; }
 .research-section-title > p:last-child { max-width: 560px; }
 .section-research > .papers-section { padding-top: 56px; }
@@ -252,6 +254,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
   .hero-profile { border-top: 1px solid var(--line); border-left: 0; padding: 32px 0 0; }
   .hero-education-list article { grid-template-columns: 96px 1fr; }
   .focus-strip-inner { justify-content: flex-start; }
+  .focus-interest { flex-basis: 100%; }
   .papers-section, .inner-page { padding-block: 76px 92px; }
   .research-section-title { padding-top: 76px; }
   .section-research > .papers-section { padding-top: 32px; }
