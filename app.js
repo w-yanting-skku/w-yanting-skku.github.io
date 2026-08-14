@@ -5,7 +5,7 @@ const papers = [
     status: "Job Market Paper",
     year: "In revision",
     featured: true,
-    thumbnail: "assets/papers/robot-multi-party-awareness.png",
+    thumbnail: "assets/papers/robot-multi-party-awareness-abstract.png",
     keywords: ["Multi-party HRI", "Service adaptability", "Revisit intention"],
     title: "Robot Multi-Party Awareness in Complex Frontline Service Environments: Effects on Service Adaptability and Customer Revisit Intentions",
     authors: "Yanting Wang, Sangseok You, and Soowon Kim",
@@ -21,7 +21,7 @@ const papers = [
     category: "published",
     status: "Published",
     year: "2023",
-    thumbnail: "assets/papers/enhancing-robot-explainability.png",
+    thumbnail: "assets/papers/enhancing-robot-explainability-abstract.png",
     keywords: ["Robot explainability", "Social cues", "Collaboration"],
     title: "Enhancing Robot Explainability in Human–Robot Collaboration",
     authors: "Yanting Wang and Sangseok You",
@@ -37,7 +37,7 @@ const papers = [
     category: "published",
     status: "Published",
     year: "2025",
-    thumbnail: "assets/papers/embodied-robots-framework.png",
+    thumbnail: "assets/papers/embodied-robots-framework-abstract.png",
     keywords: ["Embodied robots", "Design science", "Real-world deployment"],
     title: "Designing Embodied Robots for Real-World Applications: A Contextual and Goal-Driven Framework Grounded in IS Design Science",
     authors: "Yanting Wang and Sangseok You",
@@ -53,7 +53,7 @@ const papers = [
     category: "under-review",
     status: "Under review",
     year: "Applied AI",
-    thumbnail: "assets/papers/trust-pathways-hybrid-teams.png",
+    thumbnail: "assets/papers/trust-pathways-hybrid-teams-abstract.png",
     keywords: ["Robot trust", "Human identification", "Hybrid teams"],
     title: "Building Trust in Robots, Identifying with Humans: Distinct Trust Pathways in Hybrid",
     authors: "Sangseok You, Yanting Wang, and Lionel P. Robert Jr.",
@@ -69,7 +69,7 @@ const papers = [
     category: "under-review",
     status: "Under review",
     year: "APJIS",
-    thumbnail: "assets/papers/online-news-under-stress.svg",
+    thumbnail: "assets/papers/online-news-under-stress-abstract.png",
     keywords: ["News believability", "Stress", "Digital behavior"],
     title: "Online News Appraisal Under Stress: How Internal and External Resources Shape News Believability and Behavior",
     authors: "Yanting Wang, Sangseok You, and Daphne Chang",
@@ -85,7 +85,7 @@ const papers = [
     category: "working",
     status: "Working paper",
     year: "In development",
-    thumbnail: "assets/papers/perceived-robot-explainability.png",
+    thumbnail: "assets/papers/perceived-robot-explainability-abstract.png",
     keywords: ["Perceived robot explainability", "Human–robot teams", "Social cues"],
     title: "Perceived robot explainability in human-robot team",
     authors: "Yanting Wang and Sangseok You",
@@ -101,7 +101,7 @@ const papers = [
     category: "working",
     status: "Working paper",
     year: "In development",
-    thumbnail: "assets/papers/trust-repair-service-failure.png",
+    thumbnail: "assets/papers/trust-repair-service-failure-abstract.png",
     keywords: ["Trust repair", "Service failure", "Behavioral intention"],
     title: "Trust Repair in Human–Robot Interaction After Service Failure",
     authors: "Yanting Wang, Sangseok You, Younghoon Chang, Jaehyun Park, Sunghan Ryu, and Seoyoun Lee",
@@ -117,7 +117,7 @@ const papers = [
     category: "working",
     status: "Working paper",
     year: "In development",
-    thumbnail: "assets/papers/vr-mr-spatial-learning.jpg",
+    thumbnail: "assets/papers/vr-mr-spatial-learning-abstract.png",
     keywords: ["VR / MR", "Spatial learning", "Affordances"],
     title: "Comparing VR and MR for Spatial Learning",
     authors: "Mincheol Shin, Yanting Wang, Jaeeun Lim, and Sangseok You",
@@ -131,9 +131,9 @@ const papers = [
 ];
 
 const categoryLabels = { published: "Published", "under-review": "Under review", working: "Working paper" };
-const panels = [...document.querySelectorAll("[data-panel]")];
-const tabs = [...document.querySelectorAll("[role='tab'][data-tab-target]")];
-const tabTriggers = [...document.querySelectorAll("[data-tab-target]")];
+const sections = [...document.querySelectorAll("[data-section]")];
+const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
+const navLinks = [...document.querySelectorAll(".nav-tab[data-section-link]")];
 const paperDialog = document.getElementById("paper-dialog");
 const homePaperGrid = document.getElementById("home-paper-grid");
 const publicationLists = document.getElementById("publication-lists");
@@ -178,13 +178,21 @@ function renderPublicationLists() {
   }).join("");
 }
 
-function activateTab(tabName, updateHash = true) {
-  const requestedTab = tabName === "publications" ? "research" : tabName;
-  const validTab = panels.some((panel) => panel.dataset.panel === requestedTab) ? requestedTab : "home";
-  panels.forEach((panel) => { const active = panel.dataset.panel === validTab; panel.hidden = !active; panel.classList.toggle("is-active", active); });
-  tabs.forEach((tab) => { const active = tab.dataset.tabTarget === validTab; tab.classList.toggle("is-active", active); tab.setAttribute("aria-selected", String(active)); tab.tabIndex = active ? 0 : -1; });
-  if (updateHash) history.pushState(null, "", `#tab=${validTab}`);
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function setActiveSection(sectionName) {
+  navLinks.forEach((link) => {
+    const active = link.dataset.sectionLink === sectionName;
+    link.classList.toggle("is-active", active);
+    if (active) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+function scrollToSection(sectionName, updateHash = true) {
+  const requestedSection = sectionName === "publications" ? "research" : sectionName;
+  const target = document.getElementById(requestedSection) || document.getElementById("home");
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+  setActiveSection(target.dataset.section);
+  if (updateHash) history.pushState(null, "", `#${target.id}`);
 }
 
 function fillDialog(paper) {
@@ -213,17 +221,24 @@ function closePaper(updateHash = true) {
   syncingDialog = true;
   if (paperDialog.open) paperDialog.close();
   syncingDialog = false;
-  if (updateHash) history.pushState(null, "", "#tab=home");
+  if (updateHash) history.pushState(null, "", "#research");
 }
 
 function syncFromHash() {
-  const [type, target] = window.location.hash.replace(/^#/, "").split("=");
+  const hash = window.location.hash.replace(/^#/, "");
+  const [type, target] = hash.split("=");
   if (type === "paper" && target) { openPaper(target, false); return; }
   if (paperDialog.open) closePaper(false);
-  activateTab(type === "tab" ? target : "home", false);
+  const legacyTarget = type === "tab" ? target : hash;
+  const section = sections.find((item) => item.id === legacyTarget) || document.getElementById("home");
+  section.scrollIntoView({ behavior: "auto", block: "start" });
+  setActiveSection(section.dataset.section);
 }
 
-tabTriggers.forEach((trigger) => trigger.addEventListener("click", () => activateTab(trigger.dataset.tabTarget)));
+sectionLinks.forEach((link) => link.addEventListener("click", (event) => {
+  event.preventDefault();
+  scrollToSection(link.dataset.sectionLink);
+}));
 document.addEventListener("click", (event) => { const paperButton = event.target.closest("[data-paper]"); if (paperButton) openPaper(paperButton.dataset.paper); });
 document.querySelectorAll("[data-filter]").forEach((button) => {
   button.addEventListener("click", () => {
@@ -232,22 +247,16 @@ document.querySelectorAll("[data-filter]").forEach((button) => {
     renderHomePapers();
   });
 });
-tabs.forEach((tab, index) => {
-  tab.addEventListener("keydown", (event) => {
-    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-    event.preventDefault();
-    let nextIndex = index;
-    if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
-    if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
-    if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = tabs.length - 1;
-    tabs[nextIndex].focus(); activateTab(tabs[nextIndex].dataset.tabTarget);
-  });
-});
 document.getElementById("dialog-back").addEventListener("click", () => closePaper());
 document.getElementById("dialog-close").addEventListener("click", () => closePaper());
-paperDialog.addEventListener("close", () => { if (!syncingDialog && window.location.hash.startsWith("#paper=")) history.pushState(null, "", "#tab=home"); });
+paperDialog.addEventListener("close", () => { if (!syncingDialog && window.location.hash.startsWith("#paper=")) history.pushState(null, "", "#research"); });
 window.addEventListener("hashchange", syncFromHash);
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  if (visible) setActiveSection(visible.target.dataset.section);
+}, { rootMargin: "-18% 0px -64%", threshold: [0.05, 0.2, 0.45] });
+sections.forEach((section) => sectionObserver.observe(section));
 
 renderHomePapers();
 renderPublicationLists();

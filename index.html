@@ -9,12 +9,13 @@
     <meta property="og:title" content="Yanting Wang · Management Information Systems" />
     <meta property="og:description" content="Multi-party HRI, frontline service robots, explainability, and trust repair." />
     <meta property="og:url" content="https://w-yanting-skku.github.io/" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://w-yanting-skku.github.io/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Yanting Wang · Management Information Systems" />
     <meta name="twitter:description" content="Multi-party HRI, frontline service robots, explainability, and trust repair." />
+    <meta name="twitter:image" content="https://w-yanting-skku.github.io/assets/og.png" />
     <link rel="canonical" href="https://w-yanting-skku.github.io/" />
-    <link rel="icon" href="assets/yanting-wang.jpg" />
-    <link rel="stylesheet" href="styles.css?v=13" />
+    <link rel="stylesheet" href="styles.css?v=14" />
     <title>Yanting Wang · Management Information Systems</title>
   </head>
   <body>
@@ -22,29 +23,28 @@
 
     <header class="site-header">
       <div class="header-inner">
-        <button class="wordmark" type="button" data-tab-target="home" aria-label="Yanting Wang — return to Home">
+        <a class="wordmark" href="#home" data-section-link="home" aria-label="Yanting Wang — return to Home">
           <span class="wordmark-text">Yanting Wang</span><span class="mini-robot" aria-hidden="true"><span></span></span>
-        </button>
-        <nav class="tab-nav" aria-label="Primary navigation" role="tablist">
-          <button class="nav-tab is-active" id="tab-home" role="tab" aria-selected="true" aria-controls="panel-home" data-tab-target="home">Home</button>
-          <button class="nav-tab" id="tab-about" role="tab" aria-selected="false" aria-controls="panel-about" data-tab-target="about">About</button>
-          <button class="nav-tab" id="tab-research" role="tab" aria-selected="false" aria-controls="panel-research" data-tab-target="research">Research &amp; Publications</button>
-          <button class="nav-tab" id="tab-experience" role="tab" aria-selected="false" aria-controls="panel-experience" data-tab-target="experience">Experience</button>
-          <button class="nav-tab" id="tab-service" role="tab" aria-selected="false" aria-controls="panel-service" data-tab-target="service">Teaching &amp; Service</button>
+        </a>
+        <nav class="tab-nav" aria-label="Primary navigation">
+          <a class="nav-tab is-active" href="#home" data-section-link="home" aria-current="page">Home</a>
+          <a class="nav-tab" href="#about" data-section-link="about">About</a>
+          <a class="nav-tab" href="#research" data-section-link="research">Research &amp; Publications</a>
+          <a class="nav-tab" href="#experience" data-section-link="experience">Experience</a>
+          <a class="nav-tab" href="#service" data-section-link="service">Teaching &amp; Service</a>
         </nav>
         <a class="header-cv" href="assets/Yanting_Wang_CV.pdf" target="_blank" rel="noreferrer">CV <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="tab-panel is-active" id="panel-home" role="tabpanel" aria-labelledby="tab-home" data-panel="home">
+      <section class="page-section section-home" id="home" data-section="home">
         <div class="container hero">
           <div class="hero-copy">
-            <figure class="hero-headshot"><img src="assets/yanting-wang.jpg" alt="Yanting Wang" /></figure>
             <h1>Yanting Wang</h1>
             <p class="hero-role">Ph.D. Candidate · Management Information Systems</p>
             <div class="hero-actions">
-              <button class="button button-primary" type="button" data-tab-target="research">View research <span aria-hidden="true">→</span></button>
+              <a class="button button-primary" href="#research" data-section-link="research">View research <span aria-hidden="true">→</span></a>
               <a class="button button-secondary" href="mailto:wyanting@skku.edu">Contact</a>
             </div>
           </div>
@@ -71,6 +71,10 @@
           </div>
         </div>
 
+      </section>
+
+      <section class="page-section section-research" id="research" data-section="research">
+
         <section class="container papers-section" aria-labelledby="home-papers-title">
           <div class="section-heading split-heading">
             <div><p class="section-kicker">Research portfolio</p><h2 id="home-papers-title">Research Projects</h2></div>
@@ -85,9 +89,6 @@
           <div class="paper-grid" id="home-paper-grid"></div>
           <noscript><p class="noscript-note">Please enable JavaScript to browse the paper summaries and detail views.</p></noscript>
         </section>
-      </section>
-
-      <section class="tab-panel" id="panel-research" role="tabpanel" aria-labelledby="tab-research" data-panel="research" hidden>
         <div class="container inner-page">
           <header class="page-intro research-intro">
             <p class="section-kicker">Research</p>
@@ -116,7 +117,7 @@
         </div>
       </section>
 
-      <section class="tab-panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" data-panel="experience" hidden>
+      <section class="page-section section-experience" id="experience" data-section="experience">
         <div class="container inner-page">
           <header class="page-intro compact-intro"><p class="section-kicker">Industry collaboration</p></header>
           <div class="experience-list">
@@ -132,7 +133,7 @@
         </div>
       </section>
 
-      <section class="tab-panel" id="panel-service" role="tabpanel" aria-labelledby="tab-service" data-panel="service" hidden>
+      <section class="page-section section-service" id="service" data-section="service">
         <div class="container inner-page">
           <header class="page-intro compact-intro"><p class="section-kicker">Teaching &amp; service</p></header>
           <div class="service-grid">
@@ -144,7 +145,7 @@
         </div>
       </section>
 
-      <section class="tab-panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" data-panel="about" hidden>
+      <section class="page-section section-about" id="about" data-section="about">
         <div class="container inner-page about-page">
           <header class="page-intro about-intro"><p class="section-kicker">About</p><p>My research examines how AI artifacts, such as robots, are incorporated into organizational settings and how their design, use, and interaction with users shape perceptions, evaluations, and behavioral outcomes.</p></header>
           <div class="about-layout">
@@ -178,6 +179,6 @@
         </article>
       </div>
     </dialog>
-    <script src="app.js?v=13"></script>
+    <script src="app.js?v=14"></script>
   </body>
 </html>
