@@ -2,9 +2,8 @@ const papers = [
   {
     id: "robot-multi-party-awareness",
     category: "working",
-    status: "Job Market Paper",
+    status: "Working paper",
     year: "In revision",
-    featured: true,
     thumbnail: "assets/papers/robot-multi-party-awareness-abstract.png",
     keywords: ["Multi-party HRI", "Service adaptability", "Revisit intention"],
     title: "Robot Multi-Party Awareness in Complex Frontline Service Environments: Effects on Service Adaptability and Customer Revisit Intentions",
@@ -52,12 +51,12 @@ const papers = [
     id: "trust-pathways-hybrid-teams",
     category: "under-review",
     status: "Under review",
-    year: "Applied AI",
+    year: "Manuscript",
     thumbnail: "assets/papers/trust-pathways-hybrid-teams-abstract.png",
     keywords: ["Robot trust", "Human identification", "Hybrid teams"],
     title: "Building Trust in Robots, Identifying with Humans: Distinct Trust Pathways in Hybrid",
-    authors: "Sangseok You, Yanting Wang, and Lionel P. Robert Jr.",
-    venue: "Under review at Applied Artificial Intelligence",
+    authors: "",
+    venue: "",
     summary: "Investigates how trust in robot teammates and identification with human teammates can follow distinct pathways inside hybrid human–robot teams.",
     overview: "Hybrid teams contain different kinds of partners. This manuscript distinguishes the pathway through which people come to trust robotic teammates from the pathway through which they identify with human teammates.",
     focus: "Trust in robots, human identification, and hybrid human–robot teams.",
@@ -68,12 +67,12 @@ const papers = [
     id: "online-news-under-stress",
     category: "under-review",
     status: "Under review",
-    year: "APJIS",
+    year: "Manuscript",
     thumbnail: "assets/papers/online-news-under-stress-abstract.png",
     keywords: ["News believability", "Stress", "Digital behavior"],
     title: "Online News Appraisal Under Stress: How Internal and External Resources Shape News Believability and Behavior",
-    authors: "Yanting Wang, Sangseok You, and Daphne Chang",
-    venue: "Under review at Asia Pacific Journal of Information Systems",
+    authors: "",
+    venue: "",
     summary: "Examines how stress changes online news appraisal and how people’s internal and external resources shape believability judgments and behavior.",
     overview: "When people encounter online news under stress, their ability to assess believability may depend on both personal resources and support in the surrounding information environment.",
     focus: "Online news appraisal, stress, perceived believability, and digital behavior.",
@@ -99,8 +98,9 @@ const papers = [
   {
     id: "trust-repair-service-failure",
     category: "working",
-    status: "Working paper",
+    status: "Job Market Paper",
     year: "In development",
+    featured: true,
     thumbnail: "assets/papers/trust-repair-service-failure-abstract.png",
     keywords: ["Trust repair", "Service failure", "Behavioral intention"],
     title: "Trust Repair in Human–Robot Interaction After Service Failure",
@@ -148,7 +148,7 @@ function paperCard(paper) {
         ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}">` : `<div class="paper-thumbnail-placeholder"><span aria-hidden="true">+</span><small>Thumbnail reserved</small></div>`}
       </div>
       <div class="paper-card-copy">
-        <h3>${paper.title}</h3><p class="paper-authors">${paper.authors}</p><p class="paper-summary">${paper.summary}</p>
+        <h3>${paper.title}</h3><p class="paper-summary">${paper.summary}</p>
         <div class="paper-keywords" aria-label="Keywords">${paper.keywords.map((keyword) => `<span>${keyword}</span>`).join("")}</div>
       </div>
     </div>
@@ -157,7 +157,8 @@ function paperCard(paper) {
 }
 
 function renderHomePapers() {
-  const visiblePapers = currentFilter === "all" ? papers : papers.filter((paper) => paper.category === currentFilter);
+  const visiblePapers = [...(currentFilter === "all" ? papers : papers.filter((paper) => paper.category === currentFilter))]
+    .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
   homePaperGrid.innerHTML = visiblePapers.map(paperCard).join("");
 }
 
@@ -167,13 +168,16 @@ function renderPublicationLists() {
     const groupPapers = papers.filter((paper) => paper.category === category);
     return `<section class="publication-group" aria-labelledby="group-${category}">
       <h3 id="group-${category}">${label}</h3><div class="publication-group-list">
-      ${groupPapers.map((paper, index) => `<button class="publication-row" type="button" data-paper="${paper.id}">
+      ${groupPapers.map((paper, index) => {
+        const metadata = [paper.authors, paper.venue].filter(Boolean).join(" · ");
+        return `<button class="publication-row" type="button" data-paper="${paper.id}" data-paper-source="publication">
         <span class="publication-row-index">${String(index + 1).padStart(2, "0")}</span>
         <span class="publication-row-thumbnail" data-thumbnail-for="${paper.id}">
           ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}">` : `<span class="publication-row-placeholder">Thumbnail reserved</span>`}
         </span>
-        <span><span class="publication-row-title">${paper.title}</span><span class="publication-row-meta">${paper.authors} · ${paper.venue}</span></span>
-        <span class="publication-row-arrow" aria-hidden="true">→</span></button>`).join("")}
+        <span><span class="publication-row-title">${paper.title}</span>${metadata ? `<span class="publication-row-meta">${metadata}</span>` : ""}</span>
+        <span class="publication-row-arrow" aria-hidden="true">→</span></button>`;
+      }).join("")}
       </div></section>`;
   }).join("");
 }
@@ -195,21 +199,25 @@ function scrollToSection(sectionName, updateHash = true) {
   if (updateHash) history.pushState(null, "", `#${target.id}`);
 }
 
-function fillDialog(paper) {
+function fillDialog(paper, showPublicationMeta = false) {
+  const authors = document.getElementById("dialog-authors");
+  const venue = document.getElementById("dialog-venue");
   document.getElementById("dialog-title").textContent = paper.title;
-  document.getElementById("dialog-authors").textContent = paper.authors;
-  document.getElementById("dialog-venue").textContent = paper.venue;
+  authors.textContent = paper.authors;
+  authors.hidden = !showPublicationMeta || !paper.authors;
+  venue.textContent = paper.venue;
+  venue.hidden = !showPublicationMeta || !paper.venue;
   document.getElementById("dialog-overview").textContent = paper.overview;
   document.getElementById("dialog-focus").textContent = paper.focus;
   document.getElementById("dialog-method").textContent = paper.method;
   document.getElementById("dialog-contribution").textContent = paper.contribution;
-  document.getElementById("dialog-badges").innerHTML = `<span>${categoryLabels[paper.category]}</span><span>${paper.year}</span>`;
+  document.getElementById("dialog-badges").innerHTML = `<span>${paper.status}</span><span>${paper.year}</span>`;
 }
 
-function openPaper(paperId, updateHash = true) {
+function openPaper(paperId, updateHash = true, showPublicationMeta = false) {
   const paper = papers.find((item) => item.id === paperId);
   if (!paper) return;
-  fillDialog(paper);
+  fillDialog(paper, showPublicationMeta);
   syncingDialog = true;
   if (!paperDialog.open) paperDialog.showModal();
   syncingDialog = false;
@@ -239,7 +247,10 @@ sectionLinks.forEach((link) => link.addEventListener("click", (event) => {
   event.preventDefault();
   scrollToSection(link.dataset.sectionLink);
 }));
-document.addEventListener("click", (event) => { const paperButton = event.target.closest("[data-paper]"); if (paperButton) openPaper(paperButton.dataset.paper); });
+document.addEventListener("click", (event) => {
+  const paperButton = event.target.closest("[data-paper]");
+  if (paperButton) openPaper(paperButton.dataset.paper, true, paperButton.dataset.paperSource === "publication");
+});
 document.querySelectorAll("[data-filter]").forEach((button) => {
   button.addEventListener("click", () => {
     currentFilter = button.dataset.filter;
