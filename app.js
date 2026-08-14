@@ -98,7 +98,7 @@ const papers = [
   {
     id: "trust-repair-service-failure",
     category: "job-market",
-    status: "Job Market Paper",
+    status: "Manuscript in Development",
     year: "In development",
     featured: true,
     thumbnail: "assets/papers/trust-repair-service-failure-ai.jpg?v=ai2",
