@@ -177,10 +177,11 @@ main { display: flex; flex-direction: column; }
 .timeline time { position: absolute; top: 31px; left: 0; color: var(--sage-deep); font-family: var(--serif); font-size: 13px; }
 .timeline h3 { margin: 0; font-family: var(--serif); font-size: 23px; font-weight: 500; line-height: 1.25; }
 .timeline p, .timeline small { display: block; margin: 7px 0 0; color: var(--ink-soft); font-size: 12px; }
-.contact-card { padding: 38px; background: var(--sage); }
-.contact-card h3 { max-width: 600px; margin: 0 0 32px; font-family: var(--serif); font-size: 34px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.15; }
-.contact-links { border-top: 1px solid rgba(45, 52, 49, 0.35); }
-.contact-links a { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid rgba(45, 52, 49, 0.25); text-decoration: none; }
+.contact-section { padding-top: 32px; border-top: 1px solid var(--ink); }
+.contact-subtitle { margin: 0 0 10px; font-family: var(--serif); font-size: 27px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; }
+.contact-intro { margin: 0 0 27px; color: var(--ink-soft); font-size: 13px; line-height: 1.7; }
+.contact-links { border-top: 1px solid var(--line); }
+.contact-links a { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
 .contact-links a:hover strong { text-decoration: underline; }
 .contact-links span, .contact-links strong { font-size: 12px; }
 .contact-links strong { text-align: right; }
@@ -259,7 +260,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
   .timeline article { padding-left: 0; padding-top: 58px; }
   .timeline time { top: 25px; }
   .hero-education-list article { grid-template-columns: 1fr; gap: 6px; }
-  .contact-card { padding: 28px 22px; }
   .contact-links a { align-items: flex-start; flex-direction: column; gap: 4px; }
   .contact-links strong { text-align: left; }
   .dialog-header { padding-inline: 15px; }
