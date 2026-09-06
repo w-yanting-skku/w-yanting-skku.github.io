@@ -250,3 +250,37 @@ sections.forEach((section) => sectionObserver.observe(section));
 renderHomePapers();
 document.getElementById("current-year").textContent = new Date().getFullYear();
 syncFromHash();
+
+const newsTrack = document.getElementById("home-news-track");
+const newsPrevious = document.getElementById("news-prev");
+const newsNext = document.getElementById("news-next");
+const newsPosition = document.getElementById("news-position");
+const newsCards = [...newsTrack.children];
+function newsIndex() {
+  const stride = newsCards[1].offsetLeft - newsCards[0].offsetLeft;
+  return Math.max(0, Math.min(newsCards.length - 1, Math.round(newsTrack.scrollLeft / stride)));
+}
+function updateNewsControls() {
+  const index = newsIndex();
+  newsPrevious.disabled = index === 0;
+  newsNext.disabled = index === newsCards.length - 1;
+  newsPosition.textContent = `${index + 1} / ${newsCards.length}`;
+}
+function moveNews(direction) {
+  const index = Math.max(0, Math.min(newsCards.length - 1, newsIndex() + direction));
+  newsTrack.scrollTo({
+    left: newsCards[index].offsetLeft - newsCards[0].offsetLeft,
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+  });
+}
+newsPrevious.addEventListener("click", () => moveNews(-1));
+newsNext.addEventListener("click", () => moveNews(1));
+newsTrack.addEventListener("scroll", updateNewsControls, { passive: true });
+newsTrack.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    moveNews(event.key === "ArrowLeft" ? -1 : 1);
+  }
+});
+window.addEventListener("resize", updateNewsControls);
+updateNewsControls();

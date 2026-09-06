@@ -15,7 +15,7 @@
     <meta name="twitter:description" content="Multi-party HRI, frontline service robots, explainability, and trust repair." />
     <meta name="twitter:image" content="https://w-yanting-skku.github.io/assets/og.png" />
     <link rel="canonical" href="https://w-yanting-skku.github.io/" />
-    <link rel="stylesheet" href="styles.css?v=24" />
+    <link rel="stylesheet" href="styles.css?v=28" />
     <title>Yanting Wang · Management Information Systems</title>
   </head>
   <body>
@@ -28,12 +28,13 @@
         </a>
         <nav class="tab-nav" aria-label="Primary navigation">
           <a class="nav-tab is-active" href="#home" data-section-link="home" aria-current="page">Home</a>
+          <a class="nav-tab" href="#news" data-section-link="news">News</a>
           <a class="nav-tab" href="#about" data-section-link="about">About</a>
           <a class="nav-tab" href="#research" data-section-link="research">Research &amp; Publications</a>
           <a class="nav-tab" href="#experience" data-section-link="experience">Experience</a>
           <a class="nav-tab" href="#service" data-section-link="service">Teaching &amp; Service</a>
         </nav>
-        <a class="header-cv" href="assets/Yanting_Wang_CV.pdf" target="_blank" rel="noreferrer">CV <span aria-hidden="true">↗</span></a>
+        <a class="header-cv" href="assets/Yanting_Wang_CV.pdf?v=20260815" target="_blank" rel="noreferrer">CV <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
@@ -42,13 +43,18 @@
         <div class="container hero">
           <div class="hero-copy">
             <h1>Yanting Wang</h1>
+            <nav class="hero-social-tabs" aria-label="Profile links">
+              <a href="mailto:wyanting@skku.edu">Email</a>
+              <a href="https://scholar.google.com/citations?hl=en&amp;user=ClZF1j4AAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+              <a href="assets/Yanting_Wang_CV.pdf?v=20260815" target="_blank" rel="noreferrer">CV</a>
+              <a href="https://www.linkedin.com/in/yanting-wang-773a2a2a6/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </nav>
             <p class="hero-role">Ph.D. Candidate · Management Information Systems</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#research" data-section-link="research">View research <span aria-hidden="true">→</span></a>
               <a class="button button-secondary" href="mailto:wyanting@skku.edu">Contact</a>
             </div>
-          </div>
-          <div class="hero-profile">
+            <div class="hero-profile">
             <p class="hero-introduction">I am a Ph.D. candidate in Management Information Systems at Sungkyunkwan University Business School. My research examines how emerging AI-enabled artifacts are designed, introduced, and used in organizational settings.</p>
             <section class="hero-methods" aria-labelledby="hero-methods-title">
               <p class="hero-section-label" id="hero-methods-title">Research Methods</p>
@@ -62,7 +68,30 @@
                 <article><time>2014—2019</time><div><h2>Bachelor’s in International Business and Trade</h2><p>Kangwon National University</p></div></article>
               </div>
             </section>
+            </div>
           </div>
+          <section class="home-news" aria-labelledby="home-news-title" aria-roledescription="carousel">
+            <header class="home-news-heading"><h2 id="home-news-title">✨News✨</h2></header>
+            <div class="home-news-track" id="home-news-track" tabindex="0" aria-label="News items; scroll left or right">
+                <figure class="home-news-card">
+                  <div class="home-news-image" role="img" aria-label="Image to be added"></div>
+                  <figcaption><p class="project-label">Presentation</p><h3>Presentation highlights</h3><p>Event details and a description will be added here.</p></figcaption>
+                </figure>
+                <figure class="home-news-card">
+                  <div class="home-news-image" role="img" aria-label="Image to be added"></div>
+                  <figcaption><p class="project-label">Seminar</p><h3>Research seminars</h3><p>Event details and a description will be added here.</p></figcaption>
+                </figure>
+                <figure class="home-news-card">
+                  <div class="home-news-image" role="img" aria-label="Image to be added"></div>
+                  <figcaption><p class="project-label">Academic event</p><h3>Conferences &amp; workshops</h3><p>Event details and a description will be added here.</p></figcaption>
+                </figure>
+            </div>
+            <div class="home-news-controls">
+              <button type="button" id="news-prev" aria-label="Previous news" aria-controls="home-news-track" disabled>←</button>
+              <span id="news-position" aria-live="polite" aria-atomic="true">1 / 3</span>
+              <button type="button" id="news-next" aria-label="Next news" aria-controls="home-news-track">→</button>
+            </div>
+          </section>
         </div>
 
         <div class="focus-strip" aria-label="Research Interests">
@@ -77,9 +106,29 @@
 
       </section>
 
+      <section class="page-section section-news" id="news" data-section="news">
+        <div class="container inner-page">
+          <header class="page-intro compact-intro section-title"><p class="section-kicker">01</p><h2>News</h2><p>Presentations, seminars, and academic events.</p></header>
+          <div class="news-grid" aria-label="News photo gallery placeholders">
+            <figure class="news-item">
+              <div class="news-photo-placeholder" role="img" aria-label="Photo placeholder for a research presentation"><span aria-hidden="true">+</span><small>Photo placeholder</small></div>
+              <figcaption><p class="project-label">Presentation</p><h3>Presentation highlights</h3><p>Photos and event details will be added here.</p></figcaption>
+            </figure>
+            <figure class="news-item">
+              <div class="news-photo-placeholder" role="img" aria-label="Photo placeholder for a research seminar"><span aria-hidden="true">+</span><small>Photo placeholder</small></div>
+              <figcaption><p class="project-label">Seminar</p><h3>Research seminars</h3><p>Photos and event details will be added here.</p></figcaption>
+            </figure>
+            <figure class="news-item">
+              <div class="news-photo-placeholder" role="img" aria-label="Photo placeholder for an academic event"><span aria-hidden="true">+</span><small>Photo placeholder</small></div>
+              <figcaption><p class="project-label">Academic event</p><h3>Conferences &amp; workshops</h3><p>Photos and event details will be added here.</p></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section class="page-section section-about" id="about" data-section="about">
         <div class="container inner-page about-page">
-          <header class="page-intro about-intro section-title"><p class="section-kicker">01</p><h2>About</h2><p>My research examines how AI artifacts, such as robots, are incorporated into organizational settings and how their design, use, and interaction with users shape perceptions, evaluations, and behavioral outcomes.</p></header>
+          <header class="page-intro about-intro section-title"><p class="section-kicker">02</p><h2>About</h2><p>My research examines how AI artifacts, such as robots, are incorporated into organizational settings and how their design, use, and interaction with users shape perceptions, evaluations, and behavioral outcomes.</p></header>
           <div class="about-layout">
             <div class="about-details">
               <section class="about-research-profile"><p class="service-label">Research Profile</p><p class="about-research-lead">I focus on embodied and immersive technologies—including physical robots and virtual reality—as well as digital information environments such as online news platforms.</p><p>My work uses mixed methods, combining laboratory and online experiments with open-ended online interviews and semi-structured interviews. I also collaborate with industry partners, including Hyundai Motor Company Robotics Lab and Samsung Electronics, to investigate real-world challenges at the intersection of AI, robotics, and human–technology interaction.</p></section>
@@ -98,9 +147,9 @@
               </div></section>
               <section class="contact-section" aria-labelledby="contact-title"><h3 class="contact-subtitle" id="contact-title">Let’s connect</h3><p class="contact-intro">Interested in HRI, service robotics, or research collaboration?</p><div class="contact-links">
                 <a href="mailto:wyanting@skku.edu"><span>Email</span><strong>wyanting@skku.edu</strong></a>
-                <a href="https://scholar.google.com/citations?hl=en&amp;user=ClZF1j4AAAAJ&amp;view_op=list_works&amp;gmla=AKCpqFxozvrPwoXz_FqnAKwjR-0qgjC7DAkpRrB3LYpKUcx09YD1ijg-_mzkl2ltpMND726qyWoP" target="_blank" rel="noreferrer"><span>Google Scholar</span><strong>View profile ↗</strong></a>
+                <a href="https://scholar.google.com/citations?hl=en&amp;user=ClZF1j4AAAAJ" target="_blank" rel="noreferrer"><span>Google Scholar</span><strong>View profile ↗</strong></a>
                 <a href="https://orcid.org/0009-0001-1929-8439" target="_blank" rel="noreferrer"><span>ORCID</span><strong>0009-0001-1929-8439</strong></a>
-                <a href="assets/Yanting_Wang_CV.pdf" target="_blank" rel="noreferrer"><span>Curriculum Vitae</span><strong>View PDF ↗</strong></a>
+                <a href="assets/Yanting_Wang_CV.pdf?v=20260815" target="_blank" rel="noreferrer"><span>Curriculum Vitae</span><strong>View PDF ↗</strong></a>
               </div></section>
             </div>
           </div>
@@ -108,7 +157,7 @@
       </section>
 
       <section class="page-section section-research" id="research" data-section="research">
-        <header class="container page-intro section-title research-section-title"><p class="section-kicker">02</p><h2>Research &amp; Publications</h2><p>Research projects and active manuscripts.</p></header>
+        <header class="container page-intro section-title research-section-title"><p class="section-kicker">03</p><h2>Research &amp; Publications</h2><p>Research projects and active manuscripts.</p></header>
 
         <section class="container papers-section" aria-labelledby="home-papers-title">
           <div class="section-heading split-heading">
@@ -129,7 +178,7 @@
 
       <section class="page-section section-experience" id="experience" data-section="experience">
         <div class="container inner-page">
-          <header class="page-intro compact-intro section-title"><p class="section-kicker">03 · Industry collaboration</p><h2>Experience</h2></header>
+          <header class="page-intro compact-intro section-title"><p class="section-kicker">04 · Industry collaboration</p><h2>Experience</h2></header>
           <div class="experience-list">
             <article class="experience-card">
               <div class="experience-meta"><span>2022—2023</span><strong>Hyundai Motor Company Robotics Lab</strong><small>South Korea</small></div>
@@ -145,7 +194,7 @@
 
       <section class="page-section section-service" id="service" data-section="service">
         <div class="container inner-page">
-          <header class="page-intro compact-intro section-title"><p class="section-kicker">04</p><h2>Teaching &amp; Service</h2></header>
+          <header class="page-intro compact-intro section-title"><p class="section-kicker">05</p><h2>Teaching &amp; Service</h2></header>
           <div class="service-grid">
             <section class="service-block"><p class="service-label">Teaching</p><h3>Teaching Assistant</h3><div class="service-copy"><p><strong>Undergraduate</strong> IT Management; Internet and Management.</p><p><strong>Graduate</strong> Deep Learning and Decision-Making in Management.</p></div></section>
             <section class="service-block"><p class="service-label">Academic reviewing</p><h3>Reviewer Experience</h3><div class="service-copy"><p><strong>Journals</strong> International Journal of Human-Computer Studies; Frontiers in Robotics and AI.</p><p><strong>Conferences</strong> ACM/IEEE International Conference on Human-Robot Interaction; International Conference on Information Systems; Hawaii International Conference on System Sciences; European Conference on Information Systems.</p></div></section>
@@ -169,6 +218,6 @@
         </article>
       </div>
     </dialog>
-    <script src="app.js?v=25"></script>
+    <script src="app.js?v=26"></script>
   </body>
 </html>
