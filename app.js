@@ -2,7 +2,7 @@ const papers = [
   {
     id: "robot-multi-party-awareness",
     category: "working",
-    status: "Manuscript in Development",
+    status: "Job Market Paper",
     year: "In revision",
     thumbnail: "assets/papers/robot-multi-party-awareness-ai.jpg?v=ai2",
     keywords: ["Multi-party HRI", "Service adaptability", "Revisit intention"],
@@ -98,7 +98,7 @@ const papers = [
   {
     id: "trust-repair-service-failure",
     category: "job-market",
-    status: "Manuscript in Development",
+    status: "Job Market Paper",
     year: "In development",
     featured: true,
     thumbnail: "assets/papers/trust-repair-service-failure-ai.jpg?v=ai2",
