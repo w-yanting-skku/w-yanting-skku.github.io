@@ -87,7 +87,7 @@ main { display: flex; flex-direction: column; }
 .section-heading h2, .page-intro:not(.section-title) h2 { margin: 0; font-family: var(--serif); font-size: clamp(28.9px, 3.23vw, 42.5px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.1; }
 .section-title { position: relative; max-width: none; padding-bottom: 27px; border-bottom: 1px solid var(--ink); text-align: left; }
 .section-title .section-kicker { margin-bottom: 12px; color: var(--rose); }
-.page-intro.section-title h2 { margin: 0; font-family: var(--serif); font-size: clamp(36.1px, calc(4.42vw - 3px), 54.8px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.04; }
+.page-intro.section-title h2 { margin: 0; font-family: var(--serif); font-size: clamp(18.05px, calc(2.21vw - 1.5px), 27.4px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.04; }
 .page-intro.section-title > p:last-child { max-width: 620px; margin-top: 22px; color: var(--ink-soft); font-family: var(--sans); font-size: 14px; line-height: 1.7; }
 .research-section-title { margin-bottom: 0; padding-top: 69px; }
 .research-section-title > p:last-child { max-width: 560px; }
@@ -161,7 +161,7 @@ main { display: flex; flex-direction: column; }
 
 .experience-list { border-top: 0; }
 .section-experience .page-intro { margin-bottom: 24px; }
-.section-experience .page-intro.section-title h2 { font-size: clamp(33.1px, calc(4.42vw - 6px), 51.8px); }
+.section-experience .page-intro.section-title h2 { font-size: clamp(16.55px, calc(2.21vw - 3px), 25.9px); }
 .experience-card { display: grid; grid-template-columns: 270px 1fr; gap: 52px; padding: 16px 0 18px; border-bottom: 1px solid var(--line); }
 .experience-meta { display: flex; align-items: flex-start; flex-direction: column; }
 .experience-meta span { margin-bottom: 22px; color: var(--sage-deep); font-family: var(--serif); font-size: 15px; }
@@ -288,7 +288,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 }
 
 .home-news { scroll-margin-top: 130px; display: flex; flex-direction: column; min-width: 0; min-height: 0; }
-.home-news-heading h2 { margin: 0 0 30px; font-family: var(--serif); font-size: clamp(30.6px, 3.4vw, 44.2px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.2; }
+.home-news-heading h2 { margin: 0 0 30px; font-family: var(--serif); font-size: clamp(15.3px, 1.7vw, 22.1px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.2; }
 .home-news-track { flex: 1; display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--sage) var(--paper-soft); overscroll-behavior-x: contain; }
 .home-news-track:focus-visible { outline: 3px solid var(--rose); outline-offset: 4px; }
 .home-news-card { display: flex; flex-direction: column; flex: 0 0 100%; min-width: 0; margin: 0; padding-bottom: 20px; scroll-snap-align: start; }
