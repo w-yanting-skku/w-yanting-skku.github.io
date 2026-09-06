@@ -324,3 +324,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 @media (max-width: 780px) {
   .about-research-row { grid-template-columns: 1fr; gap: 24px; }
 }
+
+.container.research-section-title { max-width: none; margin-bottom: 0; }
+
+.section-research .paper-filters { margin-top: 0; }
