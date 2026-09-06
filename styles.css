@@ -66,7 +66,7 @@ main { display: flex; flex-direction: column; }
 .button-secondary:hover { background: var(--white); }
 .hero-profile { width: 100%; margin-top: 32px; }
 .hero-profile > p { max-width: 660px; margin: 0 0 13px; color: var(--ink-soft); font-size: 14px; line-height: 1.58; }
-.hero-profile .hero-introduction { margin-bottom: 18px; color: var(--ink); font-family: var(--serif); font-size: clamp(17px, 1.55vw, 20px); line-height: 1.5; }
+.hero-profile .hero-introduction { margin-bottom: 18px; color: var(--ink); font-family: var(--serif); font-size: 16px; line-height: 1.5; }
 .hero-methods { margin-top: 28px; }
 .hero-method-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
 .hero-method-list li { border: 1px solid rgba(98, 118, 106, 0.3); border-radius: 999px; padding: 6px 10px; color: var(--ink); background: #e9efeb; font-size: 12px; font-weight: 700; }
