@@ -330,3 +330,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 .container.research-section-title { max-width: none; margin-bottom: 0; }
 
 .section-research .paper-filters { margin-top: 0; }
+
+.inner-page.about-page { padding-block: 36px 40px; }
+@media (max-width: 780px) {
+  .inner-page.about-page { padding-block: 28px 32px; }
+}
