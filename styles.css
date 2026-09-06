@@ -310,3 +310,17 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 
 .hero-copy > h1, .hero-copy > .hero-role { align-self: center; text-align: center; }
 .hero-social-tabs { align-self: center; justify-content: center; }
+
+.about-intro { margin-bottom: 32px; }
+.about-details { gap: 32px; }
+.about-research-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.about-research-row .service-label, .about-research-row .section-kicker { margin-bottom: 12px; }
+.about-research-profile { min-width: 0; padding-bottom: 0; }
+.about-research-profile > p:not(.service-label) { margin-bottom: 12px; line-height: 1.55; }
+.about-research-profile > p:last-child { margin-bottom: 0; }
+.about-research-row .about-method-section { display: block; min-width: 0; margin: 0; padding: 0; }
+.about-research-row .method-list article { grid-template-columns: 24px minmax(0, 1fr); gap: 4px 10px; padding: 12px 0; }
+.about-research-row .method-list p { grid-column: 2; line-height: 1.5; }
+@media (max-width: 780px) {
+  .about-research-row { grid-template-columns: 1fr; gap: 24px; }
+}
