@@ -328,6 +328,12 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 }
 
 .container.research-section-title { max-width: none; margin-bottom: 0; }
+.section-research > .research-section-title { padding-top: 36px; padding-bottom: 18px; }
+.section-research > .papers-section { padding-block: 20px 40px; }
+@media (max-width: 780px) {
+  .section-research > .research-section-title { padding-top: 28px; padding-bottom: 16px; }
+  .section-research > .papers-section { padding-block: 16px 32px; }
+}
 
 .section-research .paper-filters { margin-top: 0; }
 
