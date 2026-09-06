@@ -87,7 +87,7 @@ main { display: flex; flex-direction: column; }
 .section-heading h2, .page-intro:not(.section-title) h2 { margin: 0; font-family: var(--serif); font-size: clamp(28.9px, 3.23vw, 42.5px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.1; }
 .section-title { position: relative; max-width: none; padding-bottom: 27px; border-bottom: 1px solid var(--ink); text-align: left; }
 .section-title .section-kicker { margin-bottom: 12px; color: var(--rose); }
-.page-intro.section-title h2 { margin: 0; font-family: var(--serif); font-size: clamp(39.1px, 4.42vw, 57.8px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.04; }
+.page-intro.section-title h2 { margin: 0; font-family: var(--serif); font-size: clamp(36.1px, calc(4.42vw - 3px), 54.8px); font-weight: 500; letter-spacing: -0.045em; line-height: 1.04; }
 .page-intro.section-title > p:last-child { max-width: 620px; margin-top: 22px; color: var(--ink-soft); font-family: var(--sans); font-size: 14px; line-height: 1.7; }
 .research-section-title { margin-bottom: 0; padding-top: 69px; }
 .research-section-title > p:last-child { max-width: 560px; }
