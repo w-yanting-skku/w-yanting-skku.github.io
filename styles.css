@@ -305,8 +305,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 .home-news-track { flex: 1; display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--sage) var(--paper-soft); overscroll-behavior-x: contain; }
 .home-news-track:focus-visible { outline: 3px solid var(--rose); outline-offset: 4px; }
 .home-news-card { display: flex; flex-direction: column; flex: 0 0 100%; min-width: 0; margin: 0; padding-bottom: 20px; scroll-snap-align: start; }
-.home-news-image { flex: 1; width: 100%; min-height: 260px; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--paper-soft); }
-.home-news-image img { width: 100%; height: 100%; object-fit: cover; }
+.home-news-image { flex: none; width: 100%; min-height: 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--paper-soft); }
+.home-news-image img { display: block; width: 100%; height: auto; object-fit: contain; }
 .home-news-card figcaption { padding-top: 24px; }
 .home-news-card .project-label { margin-bottom: 10px; }
 .home-news-card h3 { margin: 0; font-family: var(--serif); font-size: 24.65px; font-weight: 500; line-height: 1.2; }
@@ -323,7 +323,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 
 @media (max-width: 780px) {
   .home-news-track { flex: none; }
-  .home-news-image { flex: none; min-height: 0; aspect-ratio: 4 / 3; }
+  .home-news-image { aspect-ratio: auto; }
 }
 
 .hero-copy > h1, .hero-copy > .hero-role { align-self: center; text-align: center; }
