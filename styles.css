@@ -173,6 +173,9 @@ main { display: flex; flex-direction: column; }
 .method-list p { margin: 0; color: var(--ink-soft); font-size: 13px; }
 
 .experience-list { border-top: 0; }
+.section-experience .inner-page { padding-bottom: 32px; }
+.section-service .inner-page { padding-top: 32px; }
+.experience-card:last-child { border-bottom: none; }
 .section-experience .page-intro { margin-bottom: 24px; }
 .section-experience .page-intro.section-title h2 { font-size: clamp(16.55px, calc(2.21vw - 3px), 25.9px); }
 .experience-card { display: grid; grid-template-columns: 270px 1fr; gap: 52px; padding: 16px 0 18px; border-bottom: 1px solid var(--line); }
