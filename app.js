@@ -118,7 +118,7 @@ const papers = [
   {
     id: "vr-mr-spatial-learning",
     category: "working",
-    status: "Working paper",
+    status: "Manuscript in Development",
     year: "In development",
     thumbnail: "assets/papers/vr-mr-spatial-learning-ai.jpg?v=ai2",
     keywords: ["VR / MR", "Spatial learning", "Affordances"],
