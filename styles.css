@@ -34,7 +34,7 @@ main { display: flex; flex-direction: column; }
 .section-awards { order: 6; border-top: 1px solid var(--line); }
 .inner-page.awards-page { padding-block: 36px 40px; }
 .awards-page .page-intro { max-width: none; margin-bottom: 16px; }
-.awards-list article { display: grid; grid-template-columns: 160px minmax(0, 1fr) 150px; gap: 24px; align-items: start; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.awards-list article { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; align-items: start; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .awards-list h3 { margin: 0; font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 1.3; }
 .awards-list p { margin: 4px 0 0; color: var(--ink-soft); font-size: 13px; }
 .awards-list .award-year { color: var(--sage-deep); }
