@@ -191,10 +191,10 @@ main { display: flex; flex-direction: column; }
 .service-grid { border-top: none; }
 .service-block { display: grid; grid-template-columns: 150px minmax(210px, 0.42fr) minmax(0, 1fr); gap: 28px; align-items: start; padding: 26px 0 28px; border-bottom: 1px solid var(--line); }
 .service-block .service-label { margin: 7px 0 0; }
-.service-block h3 { margin: 0; font-family: var(--serif); font-size: 24.65px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.2; }
+.service-block h3 { margin: 0; font-family: var(--serif); font-size: 20px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.2; }
 .service-copy { display: grid; gap: 13px; }
-.service-copy p { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.75; }
-.service-copy strong { display: inline-block; min-width: 118px; margin-right: 9px; color: var(--sage-deep); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.service-copy p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.75; }
+.service-copy strong { display: inline-block; min-width: 118px; margin-right: 9px; color: var(--sage-deep); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
 
 .about-intro { max-width: 900px; }
 .about-layout { max-width: 900px; }
