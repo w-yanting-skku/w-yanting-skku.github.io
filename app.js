@@ -34,6 +34,7 @@ const papers = [
   },
   {
     id: "embodied-robots-framework",
+    cardLabel: "KMIS 2025",
     category: "published",
     status: "Published",
     year: "2025",
