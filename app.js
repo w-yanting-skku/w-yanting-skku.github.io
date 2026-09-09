@@ -17,6 +17,7 @@ const papers = [
   },
   {
     id: "enhancing-robot-explainability",
+    cardLabel: "HCI International 2023",
     category: "published",
     status: "Published",
     year: "2023",
@@ -140,7 +141,7 @@ let syncingDialog = false;
 
 function paperCard(paper) {
   return `<article class="paper-card${paper.featured ? " is-featured" : ""}" data-category="${paper.category}">
-    <div class="paper-card-top"><span class="paper-status">${paper.status}</span>${paper.year ? `<span class="paper-year">${paper.year}</span>` : ""}</div>
+    <div class="paper-card-top"><span class="paper-status">${paper.status}</span>${paper.cardLabel || paper.year ? `<span class="paper-year">${paper.cardLabel || paper.year}</span>` : ""}</div>
     <div class="paper-card-content">
       <div class="paper-thumbnail" data-thumbnail-for="${paper.id}">
         ${paper.thumbnail ? `<img src="${paper.thumbnail}" alt="Visual for ${paper.title}" loading="${paper.featured ? "eager" : "lazy"}">` : `<div class="paper-thumbnail-placeholder"><span aria-hidden="true">+</span><small>Thumbnail reserved</small></div>`}
