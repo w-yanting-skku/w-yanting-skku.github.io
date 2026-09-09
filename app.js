@@ -116,6 +116,21 @@ const papers = [
     contribution: "Identifies response strategies that can repair trust after robot service failure and links them to downstream user behavior."
   },
   {
+    id: "communication-cues-robot-types",
+    category: "working",
+    status: "Working paper",
+    year: "Manuscript in development",
+    keywords: ["Communication cues", "Robot types", "Human–robot interaction"],
+    title: "Effect of Communication Cues Across Different Robot Types",
+    authors: "",
+    venue: "Manuscript under development",
+    summary: "Examines how communication cues shape user responses across different types of robots.",
+    overview: "Different robot forms may change how people interpret and respond to the same communication cue. This project studies how robot type moderates the effects of communication cues in human–robot interaction.",
+    focus: "Communication cues, robot type, and human–robot interaction.",
+    method: "Experimental study.",
+    contribution: "Clarifies when communication cues are most effective across distinct robot embodiments."
+  },
+  {
     id: "vr-mr-spatial-learning",
     category: "working",
     status: "Working paper",
@@ -130,21 +145,6 @@ const papers = [
     focus: "Virtual Reality, Mixed Reality, structural affordances, and spatial learning.",
     method: "Lab experiment.",
     contribution: "Explains how the affordances of immersive media can lead to different spatial learning outcomes."
-  },
-  {
-    id: "communication-cues-robot-types",
-    category: "working",
-    status: "Working paper",
-    year: "In development",
-    keywords: ["Communication cues", "Robot types", "Human–robot interaction"],
-    title: "Effect of Communication Cues Across Different Robot Types",
-    authors: "",
-    venue: "Manuscript under development",
-    summary: "Examines how communication cues shape user responses across different types of robots.",
-    overview: "Different robot forms may change how people interpret and respond to the same communication cue. This project studies how robot type moderates the effects of communication cues in human–robot interaction.",
-    focus: "Communication cues, robot type, and human–robot interaction.",
-    method: "Experimental study.",
-    contribution: "Clarifies when communication cues are most effective across distinct robot embodiments."
   }
 ];
 
