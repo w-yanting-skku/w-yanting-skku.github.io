@@ -86,9 +86,9 @@ main { display: flex; flex-direction: column; }
 .hero-section-label { margin: 0 0 10px; color: var(--sage-deep); font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
 .hero-education-list { border-top: 1px solid var(--ink); }
 .hero-education-list article { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
-.hero-education-list time { color: var(--sage-deep); font-family: var(--serif); font-size: 11px; }
-.hero-education-list h2 { margin: 0; font-family: var(--serif); font-size: 12.75px; font-weight: 500; line-height: 1.32; }
-.hero-education-list p { margin: 2px 0 0; color: var(--ink-soft); font-size: 10.5px; }
+.hero-education-list time { color: var(--sage-deep); font-family: var(--serif); font-size: 12px; }
+.hero-education-list h2 { margin: 0; font-family: var(--serif); font-size: 14px; font-weight: 500; line-height: 1.32; }
+.hero-education-list p { margin: 2px 0 0; color: var(--ink-soft); font-size: 11.5px; }
 
 .focus-strip { border-block: 1px solid var(--line); background: #f8f9f9; }
 .focus-strip-inner { display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 12px 34px; min-height: 0; padding-block: 22px 24px; color: var(--ink-soft); white-space: normal; overflow: visible; }
@@ -308,7 +308,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 .home-news-track { flex: 1; display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--sage) var(--paper-soft); overscroll-behavior-x: contain; }
 .home-news-track:focus-visible { outline: 3px solid var(--rose); outline-offset: 4px; }
 .home-news-card { display: flex; flex-direction: column; flex: 0 0 100%; min-width: 0; margin: 0; padding-bottom: 20px; scroll-snap-align: start; }
-.home-news-image { flex: none; width: 100%; min-height: 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--paper-soft); }
+.home-news-image { flex: none; width: 92%; margin-inline: auto; min-height: 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--paper-soft); }
 .home-news-image img { display: block; width: 100%; height: auto; object-fit: contain; }
 .home-news-card figcaption { padding-top: 24px; }
 .home-news-card .project-label { margin-bottom: 10px; }
