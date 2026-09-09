@@ -118,8 +118,8 @@ const papers = [
   {
     id: "vr-mr-spatial-learning",
     category: "working",
-    status: "Manuscript in Development",
-    year: "In development",
+    status: "Working paper",
+    year: "Manuscript in development",
     thumbnail: "assets/papers/vr-mr-spatial-learning-ai.jpg?v=ai2",
     keywords: ["VR / MR", "Spatial learning", "Affordances"],
     title: "Comparing VR and MR for Spatial Learning",
