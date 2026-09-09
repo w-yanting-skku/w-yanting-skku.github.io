@@ -6,7 +6,7 @@ const papers = [
     year: "In revision",
     thumbnail: "assets/papers/robot-multi-party-awareness-ai.jpg?v=ai2",
     keywords: ["Multi-party HRI", "Service adaptability", "Revisit intention"],
-    title: "Robot Multi-Party Awareness in Complex Frontline Service Environments: Effects on Service Adaptability and Customer Revisit Intentions",
+    title: "Physical Service Robot in Multi-Party Service Setting",
     authors: "Yanting Wang, Sangseok You, and Soowon Kim",
     venue: "Target journal: Journal of Retailing and Consumer Services",
     summary: "Examines how multiple service robots can manage multiple customers simultaneously—and how multi-party awareness shapes service adaptability and customers’ intentions to return.",
