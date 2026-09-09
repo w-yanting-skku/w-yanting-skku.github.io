@@ -56,7 +56,7 @@ const papers = [
     year: "",
     thumbnail: "assets/papers/trust-pathways-hybrid-teams-ai.jpg?v=ai2",
     keywords: ["Robot trust", "Human identification", "Hybrid teams"],
-    title: "Building Trust in Robots, Identifying with Humans: Distinct Trust Pathways in Hybrid",
+    title: "Building Trust in Human-robot Hybrid Team",
     authors: "",
     venue: "",
     summary: "Investigates how trust in robot teammates and identification with human teammates can follow distinct pathways inside hybrid human–robot teams.",
