@@ -83,6 +83,7 @@ const papers = [
   },
   {
     id: "social-cues-explainability",
+    cardLabel: "Experiment in progress",
     category: "working",
     status: "Working paper",
     year: "In development",
