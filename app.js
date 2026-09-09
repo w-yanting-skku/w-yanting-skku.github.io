@@ -72,7 +72,7 @@ const papers = [
     year: "",
     thumbnail: "assets/papers/online-news-under-stress-ai.jpg?v=ai2",
     keywords: ["News believability", "Stress", "Digital behavior"],
-    title: "Online News Appraisal Under Stress: How Internal and External Resources Shape News Believability and Behavior",
+    title: "Online News Verification and Behavior Under Stressful Conditions",
     authors: "",
     venue: "",
     summary: "Examines how stress changes online news appraisal and how people’s internal and external resources shape believability judgments and behavior.",
