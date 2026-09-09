@@ -374,3 +374,17 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--rose); outline-
 @media (max-width: 780px) {
   .inner-page.about-page { padding-block: 28px 32px; }
 }
+
+.section-about .inner-page,
+.section-experience .inner-page,
+.section-service .inner-page,
+.section-awards .inner-page { padding-top: 22px; }
+.section-research > .research-section-title { padding-top: 22px; }
+
+@media (max-width: 780px) {
+  .section-about .inner-page,
+  .section-experience .inner-page,
+  .section-service .inner-page,
+  .section-awards .inner-page { padding-top: 18px; }
+  .section-research > .research-section-title { padding-top: 18px; }
+}
