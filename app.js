@@ -120,7 +120,7 @@ const papers = [
     category: "working",
     status: "Working paper",
     year: "Manuscript in development",
-    thumbnail: "assets/papers/communication-cues-robot-types-ai.png?v=1",
+    thumbnail: "assets/papers/communication-cues-robot-types-ai-v2.png?v=1",
     keywords: ["Communication cues", "Robot types", "Human–robot interaction"],
     title: "Effect of Communication Cues Across Different Robot Types",
     authors: "",
