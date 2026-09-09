@@ -101,8 +101,8 @@ const papers = [
   {
     id: "trust-repair-service-failure",
     category: "job-market",
-    status: "Manuscript in Development",
-    year: "In development",
+    status: "Job Market Paper",
+    year: "Manuscript in Development",
     featured: true,
     thumbnail: "assets/papers/trust-repair-service-failure-ai.jpg?v=ai2",
     keywords: ["Trust repair", "Service failure", "Behavioral intention"],
