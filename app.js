@@ -155,8 +155,9 @@ function paperCard(paper) {
 }
 
 function renderHomePapers() {
+  const categoryOrder = ["job-market", "published", "under-review", "working"];
   const visiblePapers = [...(currentFilter === "all" ? papers : papers.filter((paper) => paper.category === currentFilter))]
-    .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
+    .sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category));
   homePaperGrid.innerHTML = visiblePapers.map(paperCard).join("");
 }
 
